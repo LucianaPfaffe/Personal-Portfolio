@@ -1,0 +1,683 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,500;1,600&display=swap');
+:root{--cream:#f7fff7;--ink:#213652;--blue:#4b7897;--mint:#b8e3e5;--red:#eb3747;--line:#dce8e7}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:'DM Sans',Arial,sans-serif;font-size:16px;line-height:1.6}a{color:inherit}img{display:block;width:100%;height:auto}.wrap{width:min(1280px,calc(100% - 9vw));margin-inline:auto}.site-header{display:flex;justify-content:space-between;align-items:center;gap:2rem;padding:26px 4.5vw;border-bottom:1px solid var(--line)}.wordmark{text-decoration:none;font-size:1.55rem;font-weight:700;letter-spacing:-.08em}.dot{color:var(--red)}nav{display:flex;gap:clamp(1rem,3vw,3rem);flex-wrap:wrap}nav a,.footer-inner a{text-decoration:none;font-size:.88rem;font-weight:600}nav a:hover,.footer-inner a:hover,.text-link:hover{color:var(--red)}a:focus-visible{outline:3px solid var(--red);outline-offset:5px}.eyebrow{text-transform:uppercase;letter-spacing:.16em;font-size:.74rem;font-weight:700;color:var(--blue)}h1,h2,p{margin-top:0}h1,h2{letter-spacing:-.065em;line-height:1.05}h1{font-size:clamp(4.2rem,10vw,10rem);margin:1.5rem 0 2rem}h2{font-size:clamp(3.5rem,8vw,8rem);margin:.7rem 0 0}em{font-family:'Playfair Display',Georgia,serif;font-weight:500}.intro{padding-top:clamp(5rem,10vw,9rem)}.intro p{font-size:clamp(1.15rem,1.65vw,1.5rem);max-width:760px;line-height:1.6;margin-bottom:2.3rem}.text-link{font-weight:700;text-decoration:none;border-bottom:2px solid currentColor;padding-bottom:.35rem}.text-link span{margin-left:1.1rem}.color-rule{display:flex;width:185px;height:5px;margin:clamp(5rem,10vw,9rem) 0 0}.color-rule span{flex:1}.color-rule span:nth-child(1){background:var(--red)}.color-rule span:nth-child(2){background:var(--cream);border:1px solid var(--line)}.color-rule span:nth-child(3){background:var(--mint)}.color-rule span:nth-child(4){background:var(--blue)}.color-rule span:nth-child(5){background:var(--ink)}.work-section{padding-top:5rem;padding-bottom:clamp(7rem,12vw,12rem)}.section-heading{margin-bottom:2.5rem}.project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.35rem}.project-card{display:block;position:relative;overflow:hidden;aspect-ratio:5/4;background:var(--mint);text-decoration:none}.project-card img{height:100%;object-fit:cover;transition:transform .5s ease}.project-card:hover img,.project-card:focus-visible img{transform:scale(1.045)}.project-overlay{position:absolute;inset:0;background:linear-gradient(transparent 20%,rgba(21,39,59,.87));color:#fff;padding:2rem;display:flex;align-items:flex-end;justify-content:space-between;gap:1rem;opacity:0;transition:opacity .25s}.project-card:hover .project-overlay,.project-card:focus-visible .project-overlay{opacity:1}.project-overlay strong{font-size:clamp(1.3rem,2.2vw,2rem);line-height:1.2}.project-overlay small{display:block;font-size:.85rem;font-weight:400;margin-top:.45rem}.project-button{white-space:nowrap;border:1px solid #fff;padding:.55rem .8rem;font-size:.83rem;font-weight:700}.beyond-section{background:var(--ink);color:var(--cream);padding:clamp(6rem,11vw,10rem) 0}.beyond-grid{display:grid;grid-template-columns:1fr 1fr;gap:5vw;align-items:end}.beyond-section .eyebrow{color:var(--mint)}.beyond-copy{padding-bottom:.5rem}.beyond-copy p{font-size:clamp(1.15rem,1.7vw,1.5rem);line-height:1.65;max-width:550px}.coming-soon{border-top:1px solid rgba(255,255,255,.28);margin-top:3rem;padding-top:1.4rem;display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between}.coming-soon span{font-size:.78rem;text-transform:uppercase;letter-spacing:.13em;color:var(--mint)}.coming-soon strong{font-size:.95rem}.contact-section{padding-top:clamp(7rem,12vw,12rem);padding-bottom:clamp(8rem,12vw,12rem)}.contact-section h2{margin:1.2rem 0 2rem}.contact-section p{font-size:1.15rem;max-width:550px}.contact-link{display:inline-flex;gap:3rem;align-items:center;background:var(--red);color:#fff;font-weight:700;text-decoration:none;padding:1rem 1.35rem;margin-top:1.3rem;transition:background .2s}.contact-link:hover{background:var(--ink)}.site-footer{border-top:1px solid var(--line)}.footer-inner{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding:1.6rem 0;font-size:.88rem}.detail-main{padding-top:clamp(4rem,8vw,8rem);padding-bottom:8rem}.back-link{display:inline-block;text-decoration:none;font-weight:700;border-bottom:1px solid currentColor;margin-bottom:4rem}.detail-main h1{margin:1rem 0 1.5rem}.detail-lede{font-size:clamp(1.2rem,2vw,1.6rem);max-width:650px}.detail-image{margin-top:4rem;background:var(--mint)}.detail-image img{aspect-ratio:5/3;object-fit:cover}.detail-note{max-width:650px;margin-top:2rem;color:var(--blue)}
+@media(hover:none){.project-overlay{opacity:1;background:linear-gradient(transparent 35%,rgba(21,39,59,.92))}}@media(max-width:700px){.site-header{align-items:flex-start;flex-direction:column;gap:.6rem;padding:1.2rem 5vw}nav{gap:1.2rem}nav a{font-size:.83rem}.wrap{width:calc(100% - 10vw)}.intro{padding-top:5rem}.intro p{font-size:1.08rem}.project-grid,.beyond-grid{grid-template-columns:1fr}.project-overlay{padding:1.1rem}.project-button{font-size:.75rem}.beyond-grid{gap:3rem}.beyond-copy p{font-size:1.1rem}.footer-inner{justify-content:flex-start;column-gap:2rem}}@media(max-width:370px){.project-overlay{align-items:flex-start;justify-content:flex-end;flex-direction:column}.project-button{padding:.35rem .55rem}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
+.header-logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+
+/* ==================================
+   BEYOND BUTTON
+================================== */
+
+.beyond-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 1rem;
+  padding: 0.9rem 1.2rem;
+  border: 1px solid var(--cream);
+  color: var(--cream);
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.beyond-button:hover {
+  background: var(--cream);
+  color: var(--ink);
+}
+
+
+/* ==================================
+   HOME INTRODUCTION
+================================== */
+
+.intro {
+  display: flex;
+  align-items: center;
+  min-height: min(780px, 80svh);
+  padding: clamp(5rem, 11vw, 9rem) 0;
+  background: #c84464;
+  color: #fff;
+}
+
+.intro .eyebrow,
+.intro .dot {
+  color: #fff;
+}
+
+.intro h1 {
+  max-width: 1100px;
+  margin: 1.25rem 0 2rem;
+}
+
+.intro p {
+  max-width: 760px;
+}
+
+.intro .text-link:hover {
+  color: #fff;
+  opacity: 0.75;
+}
+
+.intro a:focus-visible {
+  outline-color: #fff;
+}
+
+.intro-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(32px, 5vw, 80px);
+  position: relative;
+}
+
+.intro-copy,
+.intro-visual {
+  min-width: 0;
+}
+
+.intro .intro-copy h1 {
+  font-size: clamp(3.5rem, 7vw, 7.5rem);
+}
+
+.intro .intro-copy p {
+  max-width: 650px;
+  font-size: clamp(1.05rem, 1.5vw, 1.3rem);
+}
+
+.intro-visual {
+  display: flex;
+  justify-content: center;
+}
+
+.intro-image {
+  display: block;
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+}
+
+
+/* ==================================
+   PLAYFUL PORTFOLIO DOODLES
+================================== */
+
+.doodle {
+  position: absolute;
+  display: block;
+  pointer-events: none;
+  user-select: none;
+  z-index: 2;
+  line-height: 1;
+  font-family: Arial, sans-serif;
+}
+
+/* Floating animation */
+
+@keyframes doodleFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(-8deg);
+  }
+
+  50% {
+    transform: translateY(-10px) rotate(5deg);
+  }
+}
+
+.doodle-float {
+  animation: doodleFloat 5s ease-in-out infinite;
+}
+
+
+/* ==================================
+   INTRO DOODLES
+================================== */
+
+.intro-star {
+  top: 8%;
+  right: 5%;
+  font-size: 65px;
+  color: #DFFF73;
+}
+
+.intro-sparkle {
+  bottom: 12%;
+  left: 43%;
+  font-size: 38px;
+  color: #FFFFFF;
+  transform: rotate(18deg);
+}
+
+.intro-heart {
+  top: 18%;
+  left: 48%;
+  font-size: 55px;
+  color: #DFFF73;
+  transform: rotate(-18deg);
+}
+
+.intro-squiggle {
+  width: 135px;
+  height: 55px;
+  bottom: 7%;
+  right: 8%;
+  color: #FFFFFF;
+  transform: rotate(-15deg);
+}
+
+
+/* ==================================
+   WORK DOODLES
+================================== */
+
+.work-section {
+  position: relative;
+}
+
+.work-heading {
+  position: relative;
+}
+
+.work-star {
+  top: 5px;
+  left: 200px;
+  font-size: 54px;
+  color: #F16B9A;
+}
+
+.work-arrow {
+  width: 115px;
+  height: 100px;
+  right: 6%;
+  top: 5px;
+  color: #F16B9A;
+  transform: rotate(15deg);
+}
+
+
+/* ==================================
+   BEYOND DESIGN DOODLES
+================================== */
+
+.beyond-grid {
+  position: relative;
+}
+
+/* Star outside the text */
+
+.beyond-star {
+  position: absolute;
+  top: -45px;
+  left: -35px;
+  right: auto;
+  bottom: auto;
+  font-size: 42px;
+  color: #F16B9A;
+  z-index: 1;
+}
+
+/* Heart in lower left corner */
+
+.beyond-heart {
+  position: absolute;
+  bottom: -40px;
+  left: 3%;
+  right: auto;
+  top: auto;
+  font-size: 42px;
+  color: #F16B9A;
+  transform: rotate(-15deg);
+  z-index: 1;
+}
+
+/* Keep text above decorative elements */
+
+.beyond-heading,
+.beyond-copy {
+  position: relative;
+  z-index: 3;
+}
+
+/* Coming soon line */
+
+.coming-soon-line {
+  position: static;
+  display: block;
+  width: 150px;
+  height: 35px;
+  margin-top: 5px;
+  color: #F16B9A;
+  transform: rotate(-4deg);
+  pointer-events: none;
+}
+
+/* Hide old line if still present */
+
+.beyond-line {
+  display: none;
+}
+
+
+/* ==================================
+   CONTACT DOODLES
+================================== */
+
+.contact-section {
+  position: relative;
+}
+
+.contact-star {
+  top: 12%;
+  right: 12%;
+  font-size: 75px;
+  color: #F16B9A;
+}
+
+.contact-heart {
+  bottom: 18%;
+  right: 20%;
+  font-size: 60px;
+  color: #F16B9A;
+  transform: rotate(20deg);
+}
+
+.contact-sparkle {
+  top: 40%;
+  left: 5%;
+  font-size: 32px;
+  color: #D7E96B;
+}
+
+.contact-arrow {
+  width: 130px;
+  height: 110px;
+  right: 5%;
+  bottom: 0;
+  color: #F16B9A;
+  transform: rotate(25deg);
+}
+
+
+/* ==================================
+   TABLET & MOBILE
+================================== */
+
+@media (max-width: 768px) {
+
+  /* Intro */
+
+  .intro-star {
+    font-size: 38px;
+    right: 5%;
+    top: 5%;
+  }
+
+  .intro-heart {
+    font-size: 35px;
+    left: auto;
+    right: 10%;
+    top: 40%;
+  }
+
+  .intro-sparkle {
+    font-size: 25px;
+    left: 10%;
+    bottom: 5%;
+  }
+
+  .intro-squiggle {
+    width: 80px;
+    right: 5%;
+    bottom: 5%;
+  }
+
+  /* Work */
+
+  .work-star {
+    font-size: 35px;
+    left: 150px;
+  }
+
+  .work-arrow {
+    width: 65px;
+    right: 0;
+  }
+
+  /* Beyond Design */
+
+  .beyond-star {
+    top: -30px;
+    left: 0;
+    right: auto;
+    font-size: 28px;
+  }
+
+  .beyond-heart {
+    bottom: -25px;
+    left: 5%;
+    font-size: 30px;
+  }
+
+  .coming-soon-line {
+    width: 110px;
+    height: 28px;
+    margin-top: 4px;
+  }
+
+  /* Contact */
+
+  .contact-star {
+    font-size: 42px;
+    right: 5%;
+  }
+
+  .contact-heart {
+    font-size: 40px;
+    right: 5%;
+  }
+
+  .contact-arrow {
+    width: 70px;
+    right: 0;
+  }
+}
+
+
+/* ==================================
+   SMALL MOBILE
+================================== */
+
+@media (max-width: 700px) {
+
+  .intro {
+    min-height: 0;
+    padding: 5.5rem 0 6rem;
+  }
+
+  .intro-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .intro .intro-copy h1 {
+    font-size: clamp(3.5rem, 12vw, 5.5rem);
+  }
+
+  .intro-image {
+    max-width: 380px;
+  }
+}
+
+
+/* ==================================
+   ACCESSIBILITY
+================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .doodle-float {
+    animation: none;
+  }
+}
+
+
+/* ==================================
+   FLORAIA PROJECT PAGE
+================================== */
+
+.floraia-intro {
+  padding-top: clamp(4rem, 8vw, 8rem);
+  padding-bottom: 4rem;
+}
+
+.floraia-intro .back-link {
+  margin-bottom: 4rem;
+}
+
+.floraia-intro h1 {
+  margin: 1rem 0 1.5rem;
+}
+
+.floraia-hero img {
+  display: block;
+  width: 100%;
+  max-height: 780px;
+  object-fit: cover;
+}
+
+.floraia-content {
+  padding-top: clamp(6rem, 10vw, 10rem);
+  padding-bottom: clamp(6rem, 10vw, 10rem);
+}
+
+.floraia-section-heading {
+  max-width: 760px;
+  margin-bottom: 3rem;
+}
+
+.floraia-section-heading h2 {
+  margin: 0.8rem 0 1.5rem;
+}
+
+.floraia-section-heading p {
+  max-width: 610px;
+  font-size: clamp(1.1rem, 1.5vw, 1.35rem);
+}
+
+.floraia-image {
+  margin: 0;
+}
+
+.floraia-image img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: var(--line);
+}
+
+.floraia-image-wide img {
+  aspect-ratio: 16 / 9;
+}
+
+.floraia-image figcaption {
+  padding-top: 0.8rem;
+  font-size: 0.85rem;
+  color: var(--blue);
+}
+
+.floraia-image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.floraia-web {
+  padding: clamp(6rem, 10vw, 10rem) 0;
+  background: #eaf2f0;
+}
+
+.floraia-end {
+  padding-top: 6rem;
+  padding-bottom: 8rem;
+}
+
+
+/* ==================================
+   FLORAIA IMAGE GALLERY
+================================== */
+
+.floraia-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.floraia-gallery-item {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  text-align: left;
+  cursor: zoom-in;
+}
+
+.floraia-gallery-item-wide {
+  grid-column: 1 / -1;
+}
+
+.floraia-gallery-item img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: #fff;
+  transition: opacity 0.2s ease;
+}
+
+.floraia-gallery-item-wide img {
+  aspect-ratio: 16 / 9;
+}
+
+.floraia-gallery-item:hover img {
+  opacity: 0.82;
+}
+
+.floraia-gallery-item > span {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 0.8rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.floraia-gallery-item:focus-visible {
+  outline: 3px solid var(--red);
+  outline-offset: 5px;
+}
+
+
+/* ==================================
+   FLORAIA LIGHTBOX
+================================== */
+
+.floraia-lightbox {
+  width: min(1400px, calc(100% - 2rem));
+  max-width: none;
+  max-height: calc(100% - 2rem);
+  padding: 3.5rem 1.25rem 1.25rem;
+  border: 0;
+  background: var(--cream);
+  color: var(--ink);
+}
+
+.floraia-lightbox::backdrop {
+  background: rgba(15, 25, 38, 0.85);
+}
+
+.floraia-lightbox figure {
+  margin: 0;
+}
+
+.floraia-lightbox img {
+  display: block;
+  width: 100%;
+  max-height: calc(100vh - 9rem);
+  object-fit: contain;
+}
+
+.floraia-lightbox figcaption {
+  padding-top: 0.7rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.floraia-lightbox-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+
+/* ==================================
+   FLORAIA MOBILE
+================================== */
+
+@media (max-width: 700px) {
+
+  .floraia-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .floraia-gallery-item-wide {
+    grid-column: auto;
+  }
+
+  .floraia-gallery-item-wide img {
+    aspect-ratio: 4 / 3;
+  }
+
+  .floraia-image-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .floraia-image-wide img {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+/* ==================================
+   BRANDING COLORS - DOODLES
+================================== */
+
+:root {
+  --brand-pink: #c84464;
+}
+
+/* Work */
+.work-star,
+.work-arrow {
+  color: var(--brand-pink);
+}
+
+/* Beyond Design */
+.beyond-star,
+.beyond-heart,
+.beyond-line,
+.coming-soon-line {
+  color: var(--brand-pink);
+}
+
+/* Contact */
+.contact-star,
+.contact-heart,
+.contact-sparkle,
+.contact-arrow {
+  color: var(--brand-pink);
+}
+
+/* Intro - white doodles on pink background */
+.intro-star,
+.intro-heart,
+.intro-sparkle,
+.intro-squiggle {
+  color: #ffffff;
+}

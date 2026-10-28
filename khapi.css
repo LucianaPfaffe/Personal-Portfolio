@@ -1,0 +1,457 @@
+/* KHAPI PROJECT */
+
+.khapi-page {
+  --khapi-blue: #273c95;
+  --khapi-ivory: #f5f0e6;
+  --khapi-ink: #30271f;
+  --khapi-muted: #68645e;
+  --khapi-line: rgba(48, 39, 31, 0.15);
+
+  color: var(--khapi-ink);
+}
+
+.khapi-page,
+.khapi-page *,
+.khapi-lightbox,
+.khapi-lightbox * {
+  box-sizing: border-box;
+}
+
+.khapi-wrap {
+  width: min(1180px, calc(100% - 48px));
+  margin-inline: auto;
+}
+
+.khapi-intro {
+  padding-block: 80px 88px;
+}
+
+.khapi-intro .back-link {
+  display: inline-block;
+  margin-bottom: 48px;
+}
+
+.khapi-page .eyebrow {
+  display: block;
+  margin-bottom: 16px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.khapi-intro h1 {
+  margin: 0 0 24px;
+  font-size: clamp(3.5rem, 8vw, 7rem);
+  line-height: 1;
+  letter-spacing: -0.055em;
+}
+
+.khapi-intro .detail-lede {
+  max-width: 790px;
+  margin: 0;
+  font-size: clamp(1.05rem, 1.6vw, 1.3rem);
+  line-height: 1.8;
+  color: var(--khapi-muted);
+}
+
+.khapi-section-heading {
+  margin-bottom: 40px;
+}
+
+.khapi-section-heading h2 {
+  margin: 0 0 20px;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.12;
+  letter-spacing: -0.045em;
+}
+
+.khapi-section-heading > p {
+  max-width: 680px;
+  margin: 0;
+  color: var(--khapi-muted);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+/* Subtle pattern behind the brand book */
+
+.khapi-brandbook {
+  position: relative;
+  isolation: isolate;
+  padding-block: 80px;
+  background-color: var(--khapi-ivory);
+}
+
+.khapi-brandbook::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: url("assets/khapi-pattern.png");
+  background-repeat: repeat;
+  background-size: 440px auto;
+  opacity: 0.045;
+  pointer-events: none;
+}
+
+/* Brand book carousel */
+
+.khapi-carousel {
+  overflow: hidden;
+  border: 1px solid var(--khapi-line);
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 16px 48px rgba(48, 39, 31, 0.06);
+}
+
+.khapi-carousel-screen {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 2 / 1;
+  background: #faf8f3;
+}
+
+.khapi-carousel-screen img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.khapi-carousel-controls {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr) 48px;
+  align-items: center;
+  gap: 20px;
+  padding: 24px 28px;
+  border-top: 1px solid var(--khapi-line);
+}
+
+.khapi-carousel-arrow {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border: 1px solid var(--khapi-line);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--khapi-ink);
+  font: inherit;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition:
+    background-color 180ms ease,
+    color 180ms ease,
+    border-color 180ms ease;
+}
+
+.khapi-carousel-arrow:hover {
+  background: var(--khapi-blue);
+  border-color: var(--khapi-blue);
+  color: #fff;
+}
+
+.khapi-carousel-info {
+  display: grid;
+  gap: 6px;
+  text-align: center;
+}
+
+.khapi-carousel-info span {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  color: var(--khapi-muted);
+}
+
+.khapi-carousel-info strong {
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* Social media description */
+
+.khapi-social {
+  padding-block: 96px 64px;
+}
+
+.khapi-social-copy {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: clamp(32px, 6vw, 88px);
+  margin-bottom: 64px;
+}
+
+.khapi-social-lede {
+  max-width: 400px;
+  margin: 0;
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  line-height: 1.5;
+  letter-spacing: -0.025em;
+}
+
+.khapi-social-description p {
+  margin: 0 0 20px;
+  color: var(--khapi-muted);
+  font-size: 1rem;
+  line-height: 1.85;
+}
+
+.khapi-social-description p:last-child {
+  margin-bottom: 0;
+}
+
+/* Three social media images */
+
+.khapi-social-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
+  gap: 24px;
+}
+
+.khapi-social-item {
+  min-width: 0;
+  margin: 0;
+}
+
+.khapi-gallery-button {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid var(--khapi-line);
+  border-radius: 12px;
+  background: var(--khapi-ivory);
+  color: var(--khapi-ink);
+  cursor: zoom-in;
+}
+
+.khapi-gallery-button img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 250ms ease;
+}
+
+.khapi-gallery-button:hover img {
+  transform: scale(1.025);
+}
+
+.khapi-gallery-expand {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  padding: 9px 13px;
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.94);
+  color: var(--khapi-ink);
+  font-size: 0.72rem;
+  font-weight: 500;
+  pointer-events: none;
+}
+
+.khapi-social-item figcaption {
+  padding-top: 20px;
+}
+
+.khapi-social-item figcaption > span {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--khapi-muted);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+}
+
+.khapi-social-item figcaption strong {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.khapi-social-item figcaption p {
+  margin: 8px 0 0;
+  color: var(--khapi-muted);
+  font-size: 0.88rem;
+  line-height: 1.7;
+}
+
+/* Bottom navigation and footer */
+
+.khapi-end {
+  padding-block: 32px 80px;
+}
+
+.khapi-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding-block: 28px;
+  border-top: 1px solid rgba(48, 39, 31, 0.15);
+  font-size: 0.85rem;
+}
+
+.khapi-footer a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.khapi-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Expanded images */
+
+body.khapi-lightbox-open {
+  overflow: hidden;
+}
+
+.khapi-lightbox {
+  width: fit-content;
+  max-width: calc(100vw - 32px);
+  max-height: calc(100dvh - 32px);
+  padding: 48px 16px 16px;
+  overflow: auto;
+  border: 0;
+  border-radius: 12px;
+  background: #fff;
+  color: #30271f;
+}
+
+.khapi-lightbox::backdrop {
+  background: rgba(15, 18, 28, 0.85);
+}
+
+.khapi-lightbox figure {
+  margin: 0;
+}
+
+.khapi-lightbox figure img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: min(1100px, calc(100vw - 64px));
+  max-height: calc(100dvh - 140px);
+  margin-inline: auto;
+  object-fit: contain;
+}
+
+.khapi-lightbox figcaption {
+  margin-top: 14px;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+.khapi-lightbox-close {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #f5f0e6;
+  color: #30271f;
+  font: inherit;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+/* Keyboard focus */
+
+.khapi-carousel:focus-visible,
+.khapi-carousel-arrow:focus-visible,
+.khapi-gallery-button:focus-visible,
+.khapi-lightbox-close:focus-visible {
+  outline: 3px solid #273c95;
+  outline-offset: 4px;
+}
+
+/* Responsive layout */
+
+@media (max-width: 900px) {
+  .khapi-social-copy {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .khapi-social-lede {
+    max-width: 650px;
+  }
+
+  .khapi-social-gallery {
+    gap: 16px;
+  }
+}
+
+@media (max-width: 680px) {
+  .khapi-wrap {
+    width: calc(100% - 32px);
+  }
+
+  .khapi-intro {
+    padding-block: 48px 56px;
+  }
+
+  .khapi-intro .back-link {
+    margin-bottom: 32px;
+  }
+
+  .khapi-brandbook {
+    padding-block: 48px;
+  }
+
+  .khapi-section-heading {
+    margin-bottom: 28px;
+  }
+
+  .khapi-carousel {
+    border-radius: 10px;
+  }
+
+  .khapi-carousel-controls {
+    grid-template-columns: 40px minmax(0, 1fr) 40px;
+    gap: 10px;
+    padding: 18px 14px;
+  }
+
+  .khapi-carousel-arrow {
+    width: 40px;
+    height: 40px;
+  }
+
+  .khapi-carousel-info strong {
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+
+  .khapi-social {
+    padding-block: 56px 32px;
+  }
+
+  .khapi-social-copy {
+    margin-bottom: 40px;
+  }
+
+  .khapi-social-gallery {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .khapi-end {
+    padding-block: 24px 48px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .khapi-carousel-arrow,
+  .khapi-gallery-button img {
+    transition: none;
+  }
+}
